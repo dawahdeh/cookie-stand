@@ -28,7 +28,7 @@ for (let i=1;i<=this.workinghour;i++){
 
 simulatedAmountOfCookies =Math.floor(Math.random() * (max - min + 1) + min)*this.avgNumberofCookiesPerchased;
 
- this.resultSimulatedAmountOfCookies[i-1] =simulatedAmountOfCookies;
+ this.resultSimulatedAmountOfCookies[i-1] =Math.floor(simulatedAmountOfCookies);
 
  this.Total=this.resultSimulatedAmountOfCookies[i-1]+this.Total;
 
@@ -104,7 +104,7 @@ const Tokyo = {
 minimumNumberOfCustomer :3,
 
 maxmumNumberOfCustomer :24,
-
+Total:0,
 avgNumberofCookiesPerchased :1.2,
 
 resultSimulatedAmountOfCookies :[],
@@ -128,8 +128,10 @@ workinghour:    15,
     simulatedAmountOfCookies =Math.floor(Math.random() * (max - min + 1) + min)*this.avgNumberofCookiesPerchased;
 
 
-     this.resultSimulatedAmountOfCookies[i-1] =simulatedAmountOfCookies;
+     this.resultSimulatedAmountOfCookies[i-1] =Math.floor(simulatedAmountOfCookies);
     
+     this.Total=this.resultSimulatedAmountOfCookies[i-1]+this.Total;
+
     }
     
 },
@@ -147,7 +149,7 @@ let ulElement=document.createElement('ul');
 locationRef.appendChild(ulElement);
 
 
-for (let i =1;i<=this.workinghour;i++) {
+for (let i =1;i<=this.workinghour+1;i++) {
 
 
     if (i<=7){
@@ -159,14 +161,13 @@ for (let i =1;i<=this.workinghour;i++) {
     }
  
 
-let liElement =document.createElement('li');
-
-
-ulElement.appendChild(liElement);
-
-liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
-
-
+    let liElement=document.createElement('li');
+    ulElement.appendChild(liElement);
+    if (i<=15)
+    liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
+    else
+    liElement.textContent= 'Total  :'+ `${this.Total}` +"  Cookies";
+    
 
 
 
@@ -198,6 +199,8 @@ const Dubai = {
    
    maxmumNumberOfCustomer :38,
    
+   Total:0,
+
    avgNumberofCookiesPerchased :3.7,
    
    resultSimulatedAmountOfCookies :[],
@@ -222,7 +225,11 @@ const Dubai = {
        
    
    
-        this.resultSimulatedAmountOfCookies[i-1] =simulatedAmountOfCookies;
+
+
+        this.resultSimulatedAmountOfCookies[i-1] =Math.floor(simulatedAmountOfCookies);
+    
+     this.Total=this.resultSimulatedAmountOfCookies[i-1]+this.Total;
        
        }
        
@@ -241,7 +248,7 @@ const Dubai = {
    locationRef.appendChild(ulElement);
    
    
-   for (let i =1;i<=this.workinghour;i++) {
+   for (let i =1;i<=this.workinghour+1;i++) {
    
    
        if (i<=7){
@@ -253,15 +260,13 @@ const Dubai = {
        }
     
    
-   let liElement =document.createElement('li');
-   
-   
-   ulElement.appendChild(liElement);
-   
-   liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
-   
-   
-   
+       let liElement=document.createElement('li');
+       ulElement.appendChild(liElement);
+       if (i<=15)
+       liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
+       else
+       liElement.textContent= 'Total  :'+ `${this.Total}` +"  Cookies";
+       
    
    
    
@@ -291,6 +296,8 @@ const Dubai = {
    
    maxmumNumberOfCustomer :38,
    
+   Total:0,
+
    avgNumberofCookiesPerchased :2.3,
    
    resultSimulatedAmountOfCookies :[],
@@ -315,7 +322,10 @@ const Dubai = {
        
    
    
-        this.resultSimulatedAmountOfCookies[i-1] =simulatedAmountOfCookies;
+
+        this.resultSimulatedAmountOfCookies[i-1] =Math.floor(simulatedAmountOfCookies);
+    
+     this.Total=this.resultSimulatedAmountOfCookies[i-1]+this.Total;
        
        }
        
@@ -334,7 +344,7 @@ const Dubai = {
    locationRef.appendChild(ulElement);
    
    
-   for (let i =1;i<=this.workinghour;i++) {
+   for (let i =1;i<=this.workinghour+1;i++) {
    
    
        if (i<=7){
@@ -346,15 +356,13 @@ const Dubai = {
        }
     
    
-   let liElement =document.createElement('li');
-   
-   
-   ulElement.appendChild(liElement);
-   
-   liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
-   
-   
-   
+       let liElement=document.createElement('li');
+       ulElement.appendChild(liElement);
+       if (i<=15)
+       liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
+       else
+       liElement.textContent= 'Total  :'+ `${this.Total}` +"  Cookies";
+       
    
    
    
@@ -387,6 +395,8 @@ const Dubai = {
    
    avgNumberofCookiesPerchased :4.6,
    
+   Total:0,
+
    resultSimulatedAmountOfCookies :[],
    
    workinghour:    15,
@@ -408,8 +418,9 @@ const Dubai = {
        simulatedAmountOfCookies =Math.floor(Math.random() * (max - min + 1) + min)*this.avgNumberofCookiesPerchased;
        
    
-   
-        this.resultSimulatedAmountOfCookies[i-1] =simulatedAmountOfCookies;
+       this.resultSimulatedAmountOfCookies[i-1] =Math.floor(simulatedAmountOfCookies);
+    
+       this.Total=this.resultSimulatedAmountOfCookies[i-1]+this.Total;
        
        }
        
@@ -440,16 +451,13 @@ const Dubai = {
        }
     
    
-   let liElement =document.createElement('li');
-   
-   
-   ulElement.appendChild(liElement);
-   
-   liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
-   
-   
-   
-   
+       let liElement=document.createElement('li');
+       ulElement.appendChild(liElement);
+       if (i<=15)
+       liElement.textContent= `${hourTime}`+`${amPm}`+ ": "+"  "+this.resultSimulatedAmountOfCookies[i-1]+"  "+"  Cookies";
+       else
+       liElement.textContent= 'Total  :'+ `${this.Total}` +"  Cookies";
+       
    
    
    
