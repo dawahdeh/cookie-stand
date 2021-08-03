@@ -6,7 +6,7 @@ p { font-family: Georgia;
     700; line-height: 26.4px; } 
 
 
-
+    table.fixed { table-layout:fixed; }
     
     body {
 
@@ -15,4 +15,12 @@ background-color: rgb(800, 206, 207);
 
 
 
+    }
+
+
+    table, th, td {
+        border: 1px solid black;
+     
+    
+    
     }
