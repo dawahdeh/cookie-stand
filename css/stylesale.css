@@ -1,41 +1,21 @@
 
-.sectionimg {
-
-    display: grid;
-    grid-template-columns: auto auto auto auto; 
-   align-items: right;
-   align-content: space-between;
-    background-color:darksalmon;
-   
 
 
 
 
-}
-
-
-
-
-
-header div {
-
+a {
 
     
+    text-decoration: none;
+        /*  */
         /* display: inline-block; */
         width: 10%;
        font-size: 25px;
-        float: right;
-text-decoration: non;
 }
 
 
-.aligmentsection{
-    /* display: grid;
-    grid-template-columns: 10px ;  
-   align-items: right;
-   align-content: space-between;
-    background-color:rgb(163, 66, 34); */
-
+/* .aligmentsection{
+    
 
     
         display: block;
@@ -46,23 +26,23 @@ text-decoration: non;
 
 
 
-}
+} */
 
 
 
 
 
-section img {
+/* section img {
 
 width:300px;
 height: 300px;
 border-radius: 50%;
 
 
-}
+} */
 
 
-.divimg{
+/* .divimg{
 
     background-color: burlywood;
     display: grid;
@@ -71,7 +51,7 @@ border-radius: 50%;
    align-content: space-between;
     background-color:darksalmon;
 
-}
+} */
     
 
 .center{
