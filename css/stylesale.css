@@ -1,17 +1,50 @@
 
 
+ header div {
 
 
+display: grid;
+grid-template-columns: 1px 1fr;
 
-a {
+ }
+
+
+ fieldset {
+    width : 110%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    
+  }
+
+
+  input:invalid {
+    box-shadow: 0 0 5px 1px red;
+  }
+  
+  
+
+header div a {
+
+    padding-left: 1200px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+/* a {
 
     
     text-decoration: none;
         /*  */
         /* display: inline-block; */
-        width: 10%;
+        /* width: 10%;
        font-size: 25px;
-}
+
+       padding-left: 1200px;
+       padding-top: 10px;
+       padding-bottom: 10px;
+       display: flex;
+       align-items:center;
+} */ 
 
 
 /* .aligmentsection{
