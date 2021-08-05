@@ -136,41 +136,45 @@ Location.prototype.render =function() {
     };
     
 
+    
+
     let Result_All=[];
-    ResultAll =function (){
+//     ResultAll =function (){
 
 
-// Seattle.ResultAll =Seattle.resultSimulatedAmountOfCookies;
+// // Seattle.ResultAll =Seattle.resultSimulatedAmountOfCookies;
 
-// Tokyo.ResultAll =Tokyo.resultSimulatedAmountOfCookies;
+// // Tokyo.ResultAll =Tokyo.resultSimulatedAmountOfCookies;
 
-// lan.ResultAll =Tokyo.resultSimulatedAmountOfCookies;
-
-for (kkk=1;kkk<=15;kkk++) {
-
-
- Result_All [kkk]= Seattle.resultSimulatedAmountOfCookies[kkk]+Tokyo.resultSimulatedAmountOfCookies[kkk]+Dubai.resultSimulatedAmountOfCookies[kkk]
-+Paris.resultSimulatedAmountOfCookies[kkk]+Lima.resultSimulatedAmountOfCookies[kkk];
+// // lan.ResultAll =Tokyo.resultSimulatedAmountOfCookies;
 
 
 
+// for (kkk=1;kkk<=15;kkk++) {
 
-return Result_All;
 
-
-}
+//  Result_All [kkk]= Seattle.resultSimulatedAmountOfCookies[kkk]+Tokyo.resultSimulatedAmountOfCookies[kkk]+Dubai.resultSimulatedAmountOfCookies[kkk]
+// +Paris.resultSimulatedAmountOfCookies[kkk]+Lima.resultSimulatedAmountOfCookies[kkk];
 
 
 
 
+// return Result_All;
 
+
+// }
 
 
 
 
 
 
-    }
+
+
+
+
+
+    // }
 
 
 
@@ -203,17 +207,6 @@ Location.prototype.simulatedNumberCookies = function() {
 
 
 
-     
-
-     
-
-
-
-
-
-
-
-
 
 arrayName=["Seattle","Tokyo","Dubai","Paris","Lima"];
 
@@ -223,7 +216,7 @@ let Seattle= new Location("Seattle",23,65,6.3)
 Seattle.simulatedNumberCookies();
 Seattle.totalCookies();
 Seattle.render();
-console.log(Seattle.resultSimulatedAmountOfCookies);
+// console.log(Seattle.resultSimulatedAmountOfCookies);
 
 
 
@@ -254,6 +247,73 @@ Lima.render();
 
 
 
+
+
+let LocationForm=document.getElementById("LocationForm") ;
+LocationForm.addEventListener('submit',submithandler);
+
+function submithandler(event) {
+
+event.preventDefault();
+// console.log (event.target.LocName.value);
+
+let LcationName=event.target.LocName.value;
+let MaxCustomer= event.target.Maxcustomer.value;
+let MinCustomer=event.target.Mincustomer.value;
+let AvgCookies=event.target.AvgCookies.value;
+
+
+let newLocation=new Location(LcationName,MaxCustomer,MinCustomer,AvgCookies);
+
+newLocation.simulatedNumberCookies();
+newLocation.totalCookies();
+newLocation.render();
+footer2 (newLocation);
+
+
+console.log(newLocation);
+
+
+
+
+
+}
+
+
+
+function Result  (newLocation){
+
+
+    for (let k=0 ;k<=14;k++){
+        
+        Result_All [k]= Seattle.resultSimulatedAmountOfCookies[k]+Tokyo.resultSimulatedAmountOfCookies[k]+
+        Dubai.resultSimulatedAmountOfCookies[k]+Paris.resultSimulatedAmountOfCookies[k]+
+        Lima.resultSimulatedAmountOfCookies[k]+newLocation.resultSimulatedAmountOfCookies[k];
+        Result_all_all=Result_all_all+Result_All [k];
+        //console.log(Result_All[k-1]);
+        // console.log(Seattle.resultSimulatedAmountOfCookies[k-1]);
+        //console.log(Tokyo.resultSimulatedAmountOfCookies[k-1]);
+
+    let th2=document.createElement("th");
+    tr1.appendChild(th2);
+    th2.textContent=Result_All[k];
+
+
+    }
+    
+
+
+
+
+
+
+}
+
+
+
+
+
+
 function footer () {
         
     let Result_all_all=0;
@@ -268,21 +328,69 @@ function footer () {
         tr1.appendChild(th1);
         th1.textContent="Total";
 
-        for (let k=1 ;k<=15;k++){
         
-            Result_All [k-1]= Seattle.resultSimulatedAmountOfCookies[k-1]+Tokyo.resultSimulatedAmountOfCookies[k-1]+Dubai.resultSimulatedAmountOfCookies[k-1]+Paris.resultSimulatedAmountOfCookies[k-1]+Lima.resultSimulatedAmountOfCookies[k-1];
-            Result_all_all=Result_all_all+Result_All [k-1];
-            //console.log(Result_All[k-1]);
-            // console.log(Seattle.resultSimulatedAmountOfCookies[k-1]);
-            //console.log(Tokyo.resultSimulatedAmountOfCookies[k-1]);
+    for (let k=0 ;k<=14;k++){
+        
+        Result_All [k]= Seattle.resultSimulatedAmountOfCookies[k]+Tokyo.resultSimulatedAmountOfCookies[k]+
+        Dubai.resultSimulatedAmountOfCookies[k]+Paris.resultSimulatedAmountOfCookies[k]+
+        Lima.resultSimulatedAmountOfCookies[k];
+        Result_all_all=Result_all_all+Result_All [k];
+        //console.log(Result_All[k-1]);
+        // console.log(Seattle.resultSimulatedAmountOfCookies[k-1]);
+        //console.log(Tokyo.resultSimulatedAmountOfCookies[k-1]);
 
-        let th2=document.createElement("th");
-        tr1.appendChild(th2);
-        th2.textContent=Result_All[k-1];
+    let th2=document.createElement("th");
+    tr1.appendChild(th2);
+    th2.textContent=Result_All[k];
+
+
+    }
+    
+
+        let th3=document.createElement("th");
+        tr1.appendChild(th3);
+        th3.textContent=Result_all_all;
+        
+
 
 
         }
         
+        
+footer();
+        
+function footer2 (newLocation) {
+        
+    let Result_all_all=0;
+
+
+    
+        let tr1=document.createElement("tr");
+        table1.appendChild(tr1);
+        
+
+        let th1=document.createElement("th");
+        tr1.appendChild(th1);
+        th1.textContent="Total";
+
+        
+    for (let k=0 ;k<=14;k++){
+        
+        Result_All [k]= Seattle.resultSimulatedAmountOfCookies[k]+Tokyo.resultSimulatedAmountOfCookies[k]+
+        Dubai.resultSimulatedAmountOfCookies[k]+Paris.resultSimulatedAmountOfCookies[k]+
+        Lima.resultSimulatedAmountOfCookies[k]+newLocation.resultSimulatedAmountOfCookies[k];
+        Result_all_all=Result_all_all+Result_All [k];
+        //console.log(Result_All[k-1]);
+        // console.log(Seattle.resultSimulatedAmountOfCookies[k-1]);
+        //console.log(Tokyo.resultSimulatedAmountOfCookies[k-1]);
+
+    let th2=document.createElement("th");
+    tr1.appendChild(th2);
+    th2.textContent=Result_All[k];
+
+
+    }
+    
 
         let th3=document.createElement("th");
         tr1.appendChild(th3);
@@ -295,6 +403,3 @@ function footer () {
         
         
         
-        
-        
-         footer ();
