@@ -17,6 +17,7 @@
 
 
 
+
 header div {
 
 
@@ -30,18 +31,18 @@ text-decoration: non;
 
 
 .aligmentsection{
-    /* display: grid;
-    grid-template-columns: 10px ;  
+    display: grid;
+    grid-template-columns: auto auto ;  
    align-items: right;
    align-content: space-between;
-    background-color:rgb(163, 66, 34); */
+    /* background-color:rgb(163, 66, 34); */
 
 
     
-        display: block;
-        margin-left: auto;
+        /* display: block; */
+        margin-left: 1px;
         margin-right: auto;
-        width: 40%;
+        /* width: 40%; */
       
 
 
@@ -49,6 +50,31 @@ text-decoration: non;
 }
 
 
+main section  img {
+
+margin-right: 220px;
+
+
+
+}
+
+main section  ul h2 {
+
+    color:brown;
+ 
+    font-size: 45px; 
+        }
+
+
+
+main section  ul li {
+
+color:black  ;  
+font-family: Georgia; 
+font-size:20px;
+
+
+    }
 
 
 
