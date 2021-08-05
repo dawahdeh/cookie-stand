@@ -13,8 +13,14 @@ grid-template-columns: 1px 1fr;
     width : 110%;
     border: 1px solid #333;
     box-sizing: border-box;
-    display:flex
+    
   }
+
+
+  input:invalid {
+    box-shadow: 0 0 5px 1px red;
+  }
+  
   
 
 header div a {
